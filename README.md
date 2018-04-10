@@ -69,3 +69,22 @@ Example:
 > location_map(my_key, "cafe", "Vancouver")
 ```
 ![](image/function3_output.png)
+
+--
+
+
+Usage: `delivery_list(yelp_key, location, order)`  
+Input:   
+
+- `yelp_key`: a string representing a Yelp API key
+- `location`: a string representing the delivery location, prefer zipcode
+- `order`: a string representing the outcome order method, order include 3 choice: *Price*, *Rating*, *Review_number*
+
+Output:  a data frame of max 20 restaurant that can deliver to a selected address based on selected order
+
+Example:
+
+```
+> my_key <- 'hzKLMV3efwrnQNdID0ivQ4JonOFIoaJzXuOEDsGbst7PIMAZv5bYBa7Kh_rfZiLlw7iyDFXeFkY2RhsFiGl9euSoE1xBAxSLpQhXJpGlRiEtegzEHMMhy9cdkwK7WnYx'
+> delivery_list(my_key, "98104", "Rating")
+```

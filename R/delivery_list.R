@@ -4,7 +4,7 @@
 #' @param yelp_key a string representing the Yelp API key
 #' @param location a string representing the delivery location, prefer zipcode
 #' @param order a string representing the outcome order method
-#' @return a dataframe of max 20 restaruant that can deliver to a selected address based on selected order
+#' @return a dataframe of max 20 restaurant that can deliver to a selected address based on selected order
 #' @author Ruoqi xu, Apr 10
 #'
 #' @import dplyr
@@ -29,7 +29,8 @@ delivery_list <- function(yelp_key, location, order) {
 
   get_yelp <- GET('https://api.yelp.com/v3/transactions/delivery/search',
                   query=list(location=location),add_headers(Authorization=paste('bearer',yelp_key)))
-
+  #input location could be address line or longitude and latitude or zipcode, zipcode is best choice
+  #order include 3 choice: Price, Rating, Review_number
   if (status_code(get_yelp) == 401) {
     stop("Error: Invalid Yelp key")
   }

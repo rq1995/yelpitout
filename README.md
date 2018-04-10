@@ -52,18 +52,20 @@ Example:
 
 --
 
-Usage: `location_map(category, location)`  
+Usage: `location_map(yelp_key, category, city)`  
 Input:   
 
+- `yelp_key`: a string representing a Yelp API key
 - `category`: a string representing the category of business
-- `location`: a city name
+- `city`: a city name
 
 Output:  a google map including locations of the top 5 businesses (ordered by review count)
 
 Example:
 
 ```
-> location_map("cafe", "Vancouver")
+> my_key <- 'hzKLMV3efwrnQNdID0ivQ4JonOFIoaJzXuOEDsGbst7PIMAZv5bYBa7Kh_rfZiLlw7iyDFXeFkY2RhsFiGl9euSoE1xBAxSLpQhXJpGlRiEtegzEHMMhy9cdkwK7WnYx'
+> location_map(my_key, "cafe", "Vancouver")
 ```
 ![](image/function3_output.png)
 --

@@ -53,7 +53,7 @@ delivery_list <- function(yelp_key, location, order) {
       result <- result%>%arrange(desc(Review_number))
     }
     return(result)
-    }},
+    },
     error = function(e) {
       stop("Error: Something unknown went wrong in location_map")})
 }

@@ -50,6 +50,7 @@ Example:
 "(604)558-3308"
 ```
 
+
 --
 
 Usage: `location_map(category, location)`  
@@ -66,4 +67,3 @@ Example:
 > location_map("cafe", "Vancouver")
 ```
 ![](image/function3_output.png)
---

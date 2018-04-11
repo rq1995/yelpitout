@@ -1,5 +1,21 @@
-
-
+#' Returns name, phone, location and postal code of a business that is the best match based on the name provided.
+#
+#' @title name match
+#' @param key a string representing the Yelp API key
+#' @param name a string representing the name of the business
+#' @param city a string representing a city name
+#' @param state a string representing state code
+#' @param country a string representing a country code
+#' @return a dateframe representing name, phone, location and postal code of a business that is the best match 
+#' @author Ying Dong, Apr 10
+#'
+#' @import tidyverse
+#' @import httr
+#'
+#' @export
+#'
+#' @examples
+#' name_match("yelp_key", "Burnaby", "BC", "CA")
 
 name_match <- function(key, name, city, state, country) {
   

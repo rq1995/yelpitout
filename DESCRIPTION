@@ -11,3 +11,4 @@ Suggests: testthat, ggplot2, tidyverse, httr, dplyr, ggmap,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+RoxygenNote: 6.0.1

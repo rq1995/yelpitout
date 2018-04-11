@@ -8,4 +8,4 @@
 language: r
 warnings_are_errors: false
 install:
-- Rscript Installations.R 
+- Rscript Installation.R 

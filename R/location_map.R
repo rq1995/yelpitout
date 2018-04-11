@@ -16,6 +16,8 @@
 #' @examples
 #' location_map("your_yelp_key", "cafe", "Vancouver")
 
+
+
 location_map <- function(yelp_key, category, city) {
 
   if (is.character(yelp_key) == FALSE) {

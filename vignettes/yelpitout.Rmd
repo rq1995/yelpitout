@@ -109,7 +109,36 @@ name_match()
 | --- | -------- | -------- | -------- |
 | Starbucks | +16042931325 | 4461 Lougheed Hwy | V5C 3Z6 |         
               
-                 
+## Function 4
+
+```
+location_map()
+```
+
+**Parameters:**
+
+* **yelp_key (str)**: -- a string representing the Yelp API key
+
+* **location (str)**: -- a string representing the delivery location, prefer zipcode 
+            
+* **order (str)**: -- a string representing the outcome order method
+
+**Return:**
+
+* a dataframe of max 20 restaurant that can deliver to a selected address based on selected order
+
+## Example 4
+
+```
+> delivery_list("yelp_key", "98104", "Rating")
+```    
+    
+| Price | Rating | Review_number | Phone_number |
+| --- | -------- | -------- | -------- |
+| $ | 4.5 | 106 | (206)249-5988 | 
+| ... | ... | ... | ... | 
+| $$ | 2.5 | 60 | (206)621-8656 | 
+                
                     
                        
                           

@@ -50,20 +50,39 @@ Example:
 "(604)558-3308"
 ```
 
+
 --
 
-Usage: `location_map(category, location)`  
+Usage: `location_map(yelp_key, category, city)`  
 Input:   
 
+- `yelp_key`: a string representing a Yelp API key
 - `category`: a string representing the category of business
-- `location`: a city name
+- `city`: a city name
 
 Output:  a google map including locations of the top 5 businesses (ordered by review count)
 
 Example:
 
 ```
-> location_map("cafe", "Vancouver")
+> location_map(my_key, "cafe", "Vancouver")
 ```
 ![](image/function3_output.png)
+
 --
+
+
+Usage: `delivery_list(yelp_key, location, order)`  
+Input:   
+
+- `yelp_key`: a string representing a Yelp API key
+- `location`: a string representing the delivery location, prefer zipcode
+- `order`: a string representing the outcome order method, order include 3 choice: *Price*, *Rating*, *Review_number*
+
+Output:  a data frame of max 20 restaurant that can deliver to a selected address based on selected order
+
+Example:
+
+```
+> delivery_list(my_key, "98104", "Rating")
+```

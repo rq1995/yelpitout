@@ -65,7 +65,6 @@ Output:  a google map including locations of the top 5 businesses (ordered by re
 Example:
 
 ```
-> my_key <- 'hzKLMV3efwrnQNdID0ivQ4JonOFIoaJzXuOEDsGbst7PIMAZv5bYBa7Kh_rfZiLlw7iyDFXeFkY2RhsFiGl9euSoE1xBAxSLpQhXJpGlRiEtegzEHMMhy9cdkwK7WnYx'
 > location_map(my_key, "cafe", "Vancouver")
 ```
 ![](image/function3_output.png)
@@ -85,6 +84,5 @@ Output:  a data frame of max 20 restaurant that can deliver to a selected addres
 Example:
 
 ```
-> my_key <- 'hzKLMV3efwrnQNdID0ivQ4JonOFIoaJzXuOEDsGbst7PIMAZv5bYBa7Kh_rfZiLlw7iyDFXeFkY2RhsFiGl9euSoE1xBAxSLpQhXJpGlRiEtegzEHMMhy9cdkwK7WnYx'
 > delivery_list(my_key, "98104", "Rating")
 ```

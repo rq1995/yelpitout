@@ -1,5 +1,5 @@
-require(ggplot2)
-require(httr)
+library(ggplot2)
+library(httr)
 
 context("Testing location_map")
 

@@ -56,5 +56,5 @@ delivery_list <- function(yelp_key, location, order) {
     return(result)
     },
     error = function(e) {
-      stop("Error: Something unknown went wrong in location_map")})
+      stop("Error: Something unknown went wrong in delivery list")})
 }

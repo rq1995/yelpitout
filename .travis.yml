@@ -7,5 +7,10 @@
 
 language: r
 warnings_are_errors: false
-install:
-- Rscript Installation.R 
+dist: trusty
+notifications:
+    on_success: never
+    on_failure: true
+r_packages:
+  - covr
+

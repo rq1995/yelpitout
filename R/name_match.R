@@ -3,9 +3,9 @@
 #' @title name match
 #' @param key a string representing the Yelp API key
 #' @param name a string representing the name of the business
-#' @param city a string representing a city name
-#' @param state a string representing state code
-#' @param country a string representing a country code
+#' @param city a string representing the city name
+#' @param state a string representing the state code
+#' @param country a string representing the country code
 #' @return a dateframe representing name, phone, location and postal code of a business that is the best match 
 #' @author Ying Dong, Apr 10
 #'

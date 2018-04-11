@@ -19,7 +19,7 @@ test_that("delivery_list() returns a dataframe of max 20 restaruant that can
   # expect_errors:
   ## test if yelp key is string, if not yield error
   # 5
-  expect_error(delivery_list(a, "98104", "Rating"), "Error: Yelp key type is not accepted, expected a string instead")
+  expect_error(delivery_list(1, "98104", "Rating"), "Error: Yelp key type is not accepted, expected a string instead")
 
   ## test if location is string, if not yield error
   expect_error(delivery_list("hzKLMV3efwrnQNdID0ivQ4JonOFIoaJzXuOEDsGbst7PIMAZv5bYBa7Kh_rfZiLlw7iyDFXeFkY2RhsFiGl9euSoE1xBAxSLpQhXJpGlRiEtegzEHMMhy9cdkwK7WnYx", 98104,"Rating"), "Error: category type is not accepted, expected a string instead")

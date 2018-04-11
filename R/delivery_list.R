@@ -7,13 +7,15 @@
 #' @return a dataframe of max 20 restaurant that can deliver to a selected address based on selected order
 #' @author Ruoqi xu, Apr 10
 #'
-#' @import dplyr
+#' @import tidyverse
 #' @import httr
 #'
 #' @export
 #'
 #' @examples
 #' delivery_list("hzKLMV3efwrnQNdID0ivQ4JonOFIoaJzXuOEDsGbst7PIMAZv5bYBa7Kh_rfZiLlw7iyDFXeFkY2RhsFiGl9euSoE1xBAxSLpQhXJpGlRiEtegzEHMMhy9cdkwK7WnYx", "98104", "Rating")
+library(httr)
+library(tidyverse)
 
 delivery_list <- function(yelp_key, location, order) {
 
@@ -35,7 +37,6 @@ delivery_list <- function(yelp_key, location, order) {
     stop("Error: Invalid Yelp key")
   }
 
-  tryCatch({
     result<-content(get_yelp)
     yelp_list<-lapply(result$businesses,function(x) x[c('name','price','rating','review_count','display_phone')])
     if (is.null(unlist(yelp_list))){
@@ -54,7 +55,6 @@ delivery_list <- function(yelp_key, location, order) {
       result <- result%>%arrange(desc(Review_number))
     }
     return(result)
-    },
-    error = function(e) {
-      stop("Error: Something unknown went wrong in delivery list")})
+
 }
+

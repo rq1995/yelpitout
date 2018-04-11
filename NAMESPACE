@@ -2,6 +2,7 @@
 
 export(delivery_list)
 export(location_map)
+export(name_match)
 export(search)
 import(dplyr)
 import(ggmap)

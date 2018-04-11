@@ -22,10 +22,10 @@ location_map <- function(yelp_key, category, city) {
     stop("Error: Yelp key type is not accepted, expected a string instead")
   }
   if (is.character(category) == FALSE) {
-    stop("Error: category type is not accepted, expected a string instead")
+    stop("Error: Category type is not accepted, expected a string instead")
   }
   if (is.character(city) == FALSE) {
-    stop("Error: city name is not accepted, expected a string instead")
+    stop("Error: City name is not accepted, expected a string instead")
   }
 
   get_yelp <- GET('https://api.yelp.com/v3/businesses/search',
@@ -54,7 +54,7 @@ location_map <- function(yelp_key, category, city) {
     result_df$longitude <- as.numeric(result_df$longitude)
     result_df$latitude <- as.numeric(result_df$latitude)
 
-    top_results <- result_df %>% arrange(desc(review_count)) %>% head(5)
+    top_results <- result_df %>% dplyr::arrange(desc(review_count)) %>% head(5)
 
     local_map <- ggmap::get_map(location = c(lon = mean(top_results$longitude),
                                              lat = mean(top_results$latitude)),
@@ -62,15 +62,14 @@ location_map <- function(yelp_key, category, city) {
                                 maptype = "hybrid",
                                 scale = 2)
 
-    p <- ggmap::ggmap(local_map) +
+    ggmap::ggmap(local_map) +
       ggplot2::geom_point(data = top_results,
                           aes(x = longitude, y = latitude, fill = "red", alpha = 0.9),
                           size = 4,
                           shape = 21) +
       ggplot2::guides(fill = FALSE,
                       alpha = FALSE,
-                      size = FALSE)
-    return(p)},
+                      size = FALSE)},
     error = function(e) {
       stop("Error: Something unknown went wrong in location_map")})
 }

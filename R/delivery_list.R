@@ -14,8 +14,6 @@
 #'
 #' @examples
 #' delivery_list("hzKLMV3efwrnQNdID0ivQ4JonOFIoaJzXuOEDsGbst7PIMAZv5bYBa7Kh_rfZiLlw7iyDFXeFkY2RhsFiGl9euSoE1xBAxSLpQhXJpGlRiEtegzEHMMhy9cdkwK7WnYx", "98104", "Rating")
-library(httr)
-library(tidyverse)
 
 delivery_list <- function(yelp_key, location, order) {
 

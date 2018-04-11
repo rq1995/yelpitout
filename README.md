@@ -1,6 +1,5 @@
 # Yelp API   
-
-
+![Build Status](https://travis-ci.org/vinverguan/yelpitout.svg?branch=master)
 ### Project contributors:
 
 1. [Yinghua Guan](https://github.com/vinverguan)

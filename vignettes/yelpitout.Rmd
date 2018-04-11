@@ -16,44 +16,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-### Introduction
+## Introduction
 
 Our package intends to ...
 
-### How to use:
-
-Usage: `search(category, location)`  
-Input: 
-
-- `category`: a string representing the category of business
-- `location`: a city name
-
-Output: a data frame containing names, ratings and price levels
-
-Example:
-
-```
-search("Chinese", "Vancouver")
-```
-
---
-
-Usage: `phone_number(business)`  
-Input: 
-
-- `business`: a string representing the name of the business
-
-Output: a string of the phone number
-
-Example:
-
-```
-> phone_number("Soirette")
-"(604)558-3308"
-```
 
 
-## Function
+
+## Function 2
 
 ```
 location_map()
@@ -71,9 +41,49 @@ location_map()
 
 * a google map including locations of the top 5 businesses (ordered by review count)
 
-## Example
+## Example 2
 
 ```
 > location_map(my_key, "cafe", "Vancouver")
+```    
+
+![](../image/function3_output.png)
+   
+## Function 3
+
 ```
-![](image/function3_output.png)
+name_match()
+```
+
+**Parameters:**
+
+* **key (str)**: -- a Yelp API key
+
+* **name (str)**: -- the name of a business 
+            
+* **city (str)**: -- a city name    
+   
+* **state (str)**: -- a state code    
+   
+* **country (str)**: -- a country code
+
+**Return:**
+
+* a dateframe representing name, phone, location and postal code of a business that is the best match
+
+## Example 3
+
+```
+> name_match(API_key, "Starbucks", "Burnaby", "BC", "CA")
+```     
+
+| Name | Phone | Location | Postal Code |
+| --- | -------- | -------- | -------- |
+| Starbucks | +16042931325 | 4461 Lougheed Hwy | V5C 3Z6 |         
+              
+                 
+                    
+                       
+                          
+                             
+                             

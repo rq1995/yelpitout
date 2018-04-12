@@ -19,7 +19,9 @@ test_that("name_match() returns name, phone, location and postal code of a busin
 
   expect_equal(typeof(name_match(Sys.getenv("yelp_key"), "Starbucks", "Burnaby", "BC", "CA")$`Postal Code`), "character")
 
-  # expect_errors
+  expect_equal(nrow(name_match(Sys.getenv("yelp_key"), "Blahblah", "Vancouver", "BC", "CA")), 1)
+
+  #  test how the function handles bad inputs
 
   # test if the key is a string, if not, yield an error
   expect_error(name_match(list("dwndiwiw"), "Starbucks", "Burnaby", "BC", "CA"), "Error: Yelp key type is not accepted, expected a string instead")

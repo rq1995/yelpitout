@@ -9,8 +9,8 @@ test_that("search_cat() returns name, rating and review count of 50 businesses t
   expect_equal(
     is.data.frame(
       search_cat(Sys.getenv("yelp_key"),
-                   'cafe',
-                   'Vancouver')),
+                 'cafe',
+                 'Vancouver')),
     TRUE)
 
   # test how the function handles bad inputs

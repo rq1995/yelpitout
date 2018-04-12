@@ -20,6 +20,7 @@
 
 name_match <- function(key, name, city, state, country) {
 
+  # check the type of inputs, we expect Yelp key, name, city, state code and country code are all strings
   if (is.character(key) == FALSE) {
     stop("Error: Yelp key type is not accepted, expected a string instead")
   }
@@ -36,22 +37,28 @@ name_match <- function(key, name, city, state, country) {
     stop("Error: Country name is not accepted, expected a string instead")
   }
 
+  # access the Yelp API
   get_yelp <- GET('https://api.yelp.com/v3/businesses/matches/best', query = list(name = name, city = city, state = state, country = country), add_headers(Authorization = paste('bearer', key)))
 
+  # check whether the key is valid for Yelp API
   if (status_code(get_yelp) == 401) {
     stop("Error: Invalid Yelp key")
   }
 
   tryCatch({
 
+    # get the result and only take name, phone and location from the business object
     result <- content(get_yelp)
-
     yelp_list <- lapply(result$businesses, function(x) x[c('name', 'phone', 'location')])
 
+    # take the results list into a dataframe and select specified columns
     result_df <- data.frame(matrix(unlist(yelp_list), nrow = 1, byrow = T), stringsAsFactors = FALSE)
     result_df <- result_df %>%
       dplyr::select(X1, X2, X10, X7)
+
+    # rename column names of the dataframe
     names(result_df) <- c('Name', 'Phone', 'Location', 'Postal Code')
 
+    # return the result dataframe
     return(result_df)})
 }

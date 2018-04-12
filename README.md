@@ -1,6 +1,10 @@
 # Yelp API   
    
-[![Build Status](https://travis-ci.org/vinverguan/yelpitout.svg?branch=master)](https://travis-ci.org/vinverguan/yelpitout)     
+[![Build Status](https://travis-ci.org/vinverguan/yelpitout.svg?branch=master)](https://travis-ci.org/vinverguan/yelpitout)
+
+[![codecov](https://codecov.io/gh/vinverguan/yelpitout/branch/master/graphs/badge.svg)](https://codecov.io/gh/vinverguan/yelpitout/)
+
+
      
 ### Project contributors:
 

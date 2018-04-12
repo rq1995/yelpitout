@@ -32,7 +32,7 @@ Output: a data frame containing names, ratings and price levels
 Example:
 
 ```
-search_cat("Chinese", "Vancouver")
+search_cat(Sys.getenv("yelp_key"), "cafe", "Vancouver")
 ```
 
 --
@@ -66,7 +66,7 @@ Output:  a google map including locations of the top 5 businesses (ordered by re
 Example:
 
 ```
-> location_map("your_yelp_key"", "cafe", "Vancouver")
+location_map(Sys.getenv("yelp_key"), "cafe", "Vancouver")
 ```
 ![](image/function3_output.png)
 
@@ -85,5 +85,5 @@ Output:  a data frame of max 20 restaurant that can deliver to a selected addres
 Example:
 
 ```
-> delivery_list(my_key, "98104", "Rating")
+delivery_list(Sys.getenv("yelp_key"), "98104", "Rating")
 ```

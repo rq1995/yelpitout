@@ -6,11 +6,21 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
 language: r
+cache: packages
 warnings_are_errors: false
 dist: trusty
-notifications:
-    on_success: never
-    on_failure: true
-r_packages:
-  - covr
+
+install:
+  -R -e
+'devtools::install.packages('httr')'
+  -R -e
+'devtools::install.packages('dplyr')'
+  -R -e
+'devtools::install.packages('ggmap')'
+  -R -e
+'devtools::install.packages('ggplot2')'
+  -R -e
+'devtools::install.packages('magrittr')'
+  -R -e
+'devtools::install.packages('utils')'
 

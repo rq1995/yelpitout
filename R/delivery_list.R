@@ -7,13 +7,13 @@
 #' @return a dataframe of max 20 restaurant that can deliver to a selected address based on selected order
 #' @author Ruoqi xu, Apr 10
 #'
-#' @import tidyverse
+#' @import dplyr
 #' @import httr
 #'
 #' @export
 #'
 #' @examples
-#' delivery_list("hzKLMV3efwrnQNdID0ivQ4JonOFIoaJzXuOEDsGbst7PIMAZv5bYBa7Kh_rfZiLlw7iyDFXeFkY2RhsFiGl9euSoE1xBAxSLpQhXJpGlRiEtegzEHMMhy9cdkwK7WnYx", "98104", "Rating")
+#' delivery_list("your_yelp_key", "98104", "Rating")
 
 delivery_list <- function(yelp_key, location, order) {
 
@@ -44,13 +44,13 @@ delivery_list <- function(yelp_key, location, order) {
     result<-data.frame(matrix(unlist(yelp_list),ncol = 5,byrow = T))
     names(result) <- c('Restaurant','Price','Rating','Review_number','Phone_number')
     if (order == "Price"){
-      result <- result%>%arrange(desc(Price))
+      result <- result%>% dplyr::arrange(desc(Price))
     }
     if (order == "Rating"){
-      result <- result%>%arrange(desc(Rating))
+      result <- result%>% dplyr::arrange(desc(Rating))
     }
     if (order == "Review_number"){
-      result <- result%>%arrange(desc(Review_number))
+      result <- result%>% dplyr::arrange(desc(Review_number))
     }
     return(result)
 

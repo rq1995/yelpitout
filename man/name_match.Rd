@@ -11,11 +11,11 @@ name_match(key, name, city, state, country)
 
 \item{name}{a string representing the name of the business}
 
-\item{city}{a string representing a city name}
+\item{city}{a string representing the city name}
 
-\item{state}{a string representing state code}
+\item{state}{a string representing the state code}
 
-\item{country}{a string representing a country code}
+\item{country}{a string representing the country code}
 }
 \value{
 a dateframe representing name, phone, location and postal code of a business that is the best match

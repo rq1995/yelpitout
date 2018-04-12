@@ -8,6 +8,9 @@
 #' @author Linsey Yao, Apr 10
 #'
 #' @import ggmap
+#' @import ggplot2
+#' @importFrom utils head
+#' @import magrittr
 #' @import dplyr
 #' @import httr
 #'
@@ -15,8 +18,6 @@
 #'
 #' @examples
 #' location_map("your_yelp_key", "cafe", "Vancouver")
-
-
 
 location_map <- function(yelp_key, category, city) {
 

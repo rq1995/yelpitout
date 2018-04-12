@@ -7,7 +7,7 @@ context("Testing name_match")
 
 test_that("name_match() returns name, phone, location and postal code of a business that is the best match based on the name provided", {
 
-  # test expected type of the outputs
+  # test expected outputs
 
   expect_equal(typeof(name_match(Sys.getenv("yelp_key"), "Starbucks", "Burnaby", "BC", "CA")), "list")
 
@@ -18,6 +18,8 @@ test_that("name_match() returns name, phone, location and postal code of a busin
   expect_equal(typeof(name_match(Sys.getenv("yelp_key"), "Starbucks", "Burnaby", "BC", "CA")$Location), "character")
 
   expect_equal(typeof(name_match(Sys.getenv("yelp_key"), "Starbucks", "Burnaby", "BC", "CA")$`Postal Code`), "character")
+
+  expect_equal(nrow(name_match(Sys.getenv("yelp_key"), "Blahblah", "Vancouver", "BC", "CA")), 1)
 
   #  test how the function handles bad inputs
 

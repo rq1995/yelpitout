@@ -51,6 +51,12 @@ name_match <- function(key, name, city, state, country) {
     result <- content(get_yelp)
     yelp_list <- lapply(result$businesses, function(x) x[c('name', 'phone', 'location')])
 
+    # if there is no result in API content, return a dataframe with only 1 row containing value of 0
+    if (is.null(unlist(yelp_list))){
+      result_0 <- data.frame(n = 0)
+      return(result_0)
+    }
+
     # take the results list into a dataframe and select specified columns
     result_df <- data.frame(matrix(unlist(yelp_list), nrow = 1, byrow = T), stringsAsFactors = FALSE)
     result_df <- result_df %>%

@@ -13,7 +13,7 @@
 #' @export
 #'
 #' @examples
-#' delivery_list("your_yelp_key", "98104", "Rating")
+#' delivery_list(Sys.getenv("yelp_key"), "98104", "Rating")
 
 delivery_list <- function(yelp_key, location, order) {
 

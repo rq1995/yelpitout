@@ -1,19 +1,19 @@
-#' Produces a table of 50 businesses
+#' Produces a table containing names, ratings and review counts of 50 businesses on Yelp
 #
-#' @title search
+#' @title search_cat
 #' @param yelp_key a string representing the Yelp API key
 #' @param category a string representing the category of the business
 #' @param city a string representing a city name
-#' @return a dataframe
+#' @return a dataframe containing business name, rating and review count
 #'
 #' @import httr
 #'
 #' @export
 #'
 #' @examples
-#' search("your_yelp_key", "cafe", "Vancouver")
+#' search_cat(Sys.getenv("yelp_key"), "cafe", "Vancouver")
 
-search <- function(yelp_key, category, city) {
+search_cat <- function(yelp_key, category, city) {
 
   if (is.character(yelp_key) == FALSE) {
     stop("Error: Yelp key type is not accepted, expected a string instead")

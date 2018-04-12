@@ -8,13 +8,13 @@ test_that("delivery_list() returns a dataframe of max 20 restaruant that can
           deliver to a selected address based on selected order", {
   # expected outputs:
   # 1
-  expect_equal(typeof(delivery_list("hzKLMV3efwrnQNdID0ivQ4JonOFIoaJzXuOEDsGbst7PIMAZv5bYBa7Kh_rfZiLlw7iyDFXeFkY2RhsFiGl9euSoE1xBAxSLpQhXJpGlRiEtegzEHMMhy9cdkwK7WnYx", "98104", "Rating")), "list")
+  expect_equal(typeof(delivery_list(Sys.getenv("yelp_key"), "98104", "Rating")), "list")
   # 2
-  expect_equal(typeof(delivery_list("hzKLMV3efwrnQNdID0ivQ4JonOFIoaJzXuOEDsGbst7PIMAZv5bYBa7Kh_rfZiLlw7iyDFXeFkY2RhsFiGl9euSoE1xBAxSLpQhXJpGlRiEtegzEHMMhy9cdkwK7WnYx", "98104", "Rating")$Price), "integer")
+  expect_equal(typeof(delivery_list(Sys.getenv("yelp_key"), "98104", "Rating")$Price), "integer")
   # 3
-  expect_equal(typeof(delivery_list("hzKLMV3efwrnQNdID0ivQ4JonOFIoaJzXuOEDsGbst7PIMAZv5bYBa7Kh_rfZiLlw7iyDFXeFkY2RhsFiGl9euSoE1xBAxSLpQhXJpGlRiEtegzEHMMhy9cdkwK7WnYx", "98104", "Rating")$Rating), "integer")
+  expect_equal(typeof(delivery_list(Sys.getenv("yelp_key"), "98104", "Rating")$Rating), "integer")
   # 4
-  expect_equal(typeof(delivery_list("hzKLMV3efwrnQNdID0ivQ4JonOFIoaJzXuOEDsGbst7PIMAZv5bYBa7Kh_rfZiLlw7iyDFXeFkY2RhsFiGl9euSoE1xBAxSLpQhXJpGlRiEtegzEHMMhy9cdkwK7WnYx", "98104", "Rating")$Review_number),"integer")
+  expect_equal(typeof(delivery_list(Sys.getenv("yelp_key"), "98104", "Rating")$Review_number),"integer")
 
   # expect_errors:
   ## test if yelp key is string, if not yield error
@@ -22,10 +22,10 @@ test_that("delivery_list() returns a dataframe of max 20 restaruant that can
   expect_error(delivery_list(1, "98104", "Rating"), "Error: Yelp key type is not accepted, expected a string instead")
 
   ## test if location is string, if not yield error
-  expect_error(delivery_list("hzKLMV3efwrnQNdID0ivQ4JonOFIoaJzXuOEDsGbst7PIMAZv5bYBa7Kh_rfZiLlw7iyDFXeFkY2RhsFiGl9euSoE1xBAxSLpQhXJpGlRiEtegzEHMMhy9cdkwK7WnYx", 98104,"Rating"), "Error: category type is not accepted, expected a string instead")
+  expect_error(delivery_list(Sys.getenv("yelp_key"), 98104,"Rating"), "Error: category type is not accepted, expected a string instead")
 
   ## test if order method is string, if not yield error
-  expect_error(delivery_list("hzKLMV3efwrnQNdID0ivQ4JonOFIoaJzXuOEDsGbst7PIMAZv5bYBa7Kh_rfZiLlw7iyDFXeFkY2RhsFiGl9euSoE1xBAxSLpQhXJpGlRiEtegzEHMMhy9cdkwK7WnYx", "98104",6), "Error: order is not accepted, expected a string instead")
+  expect_error(delivery_list(Sys.getenv("yelp_key"), "98104",6), "Error: order is not accepted, expected a string instead")
 
   ## test if yelp key can access the yelp api
   # 8

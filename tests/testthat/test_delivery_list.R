@@ -10,11 +10,14 @@ test_that("delivery_list() returns a dataframe of max 20 restaruant that can
   # 1
   expect_equal(typeof(delivery_list(Sys.getenv("yelp_key"), "98104", "Rating")), "list")
   # 2
-  expect_equal(typeof(delivery_list(Sys.getenv("yelp_key"), "98104", "Rating")$Price), "integer")
+  expect_equal(typeof(delivery_list(Sys.getenv("yelp_key"), "98104", "Price")$Price), "integer")
   # 3
   expect_equal(typeof(delivery_list(Sys.getenv("yelp_key"), "98104", "Rating")$Rating), "integer")
   # 4
-  expect_equal(typeof(delivery_list(Sys.getenv("yelp_key"), "98104", "Rating")$Review_number),"integer")
+  expect_equal(typeof(delivery_list(Sys.getenv("yelp_key"), "98104", "Review_number")$Review_number),"integer")
+  # 5
+  expect_equal(nrow(delivery_list(Sys.getenv("yelp_key"), "10435", "Review_number")),1)
+
 
   # expect_errors:
   ## test if yelp key is string, if not yield error

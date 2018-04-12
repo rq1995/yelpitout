@@ -38,7 +38,7 @@ delivery_list <- function(yelp_key, location, order) {
     result<-content(get_yelp)
     yelp_list<-lapply(result$businesses,function(x) x[c('name','price','rating','review_count','display_phone')])
     if (is.null(unlist(yelp_list))){
-      result <- data.frame(ncol=5,nrow=1)
+      result <- data.frame(n=0)
       return(result)
     }
     result<-data.frame(matrix(unlist(yelp_list),ncol = 5,byrow = T))

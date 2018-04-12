@@ -72,7 +72,6 @@ location_map <- function(yelp_key, category, city) {
                           shape = 21) +
       ggplot2::guides(fill = FALSE,
                       alpha = FALSE,
-                      size = FALSE)},
-    error = function(e) {
-      stop("Error: Something unknown went wrong in location_map")})
+                      size = FALSE)})
+
 }

@@ -53,8 +53,5 @@ name_match <- function(key, name, city, state, country) {
       dplyr::select(X1, X2, X10, X7)
     names(result_df) <- c('Name', 'Phone', 'Location', 'Postal Code')
 
-    return(result_df)},
-
-    error = function(e) {
-      stop("Error: Something unknown went wrong in the function.")})
+    return(result_df)})
 }

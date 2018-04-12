@@ -9,8 +9,8 @@ test_that("test input", {
   expect_equal(
     is.data.frame(
       search_cat(Sys.getenv("yelp_key"),
-                   'cafe',
-                   'Vancouver')),
+                 'cafe',
+                 'Vancouver')),
     TRUE)
 
   # expected errors

@@ -1,26 +1,7 @@
-# language: r
-# sudo: false
-# cache: packages
-# dist: trusty
-
-# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
-
-language: r
+language: R
+sudo: false
 cache: packages
 warnings_are_errors: false
-dist: trusty
 
-install:
-  -R -e
-'devtools::install.packages('httr')'
-  -R -e
-'devtools::install.packages('dplyr')'
-  -R -e
-'devtools::install.packages('ggmap')'
-  -R -e
-'devtools::install.packages('ggplot2')'
-  -R -e
-'devtools::install.packages('magrittr')'
-  -R -e
-'devtools::install.packages('utils')'
-
+r:
+- release

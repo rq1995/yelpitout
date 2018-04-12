@@ -21,7 +21,7 @@ Our package intends to explore ...
 
 ### How to use:
 
-Usage: `search(category, location)`  
+Usage: `search_cat(category, location)`  
 Input: 
 
 - `category`: a string representing the category of business
@@ -32,7 +32,7 @@ Output: a data frame containing names, ratings and price levels
 Example:
 
 ```
-search("Chinese", "Vancouver")
+search_cat("Chinese", "Vancouver")
 ```
 
 --
@@ -66,7 +66,7 @@ Output:  a google map including locations of the top 5 businesses (ordered by re
 Example:
 
 ```
-> location_map(my_key, "cafe", "Vancouver")
+> location_map("your_yelp_key"", "cafe", "Vancouver")
 ```
 ![](image/function3_output.png)
 

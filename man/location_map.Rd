@@ -20,7 +20,7 @@ a google map visualization of the top 5 business based on review counts
 Produces a google map visualization of top 5 businesses (ordered by review count)
 }
 \examples{
-location_map("your_yelp_key", "cafe", "Vancouver")
+location_map(Sys.getenv("yelp_key"), "cafe", "Vancouver")
 }
 \author{
 Linsey Yao, Apr 10

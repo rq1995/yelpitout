@@ -24,7 +24,7 @@ Our package intends to ...
 ## Function 1
 
 ```
-search()
+search_cat()
 ```
 
 **Parameters:**

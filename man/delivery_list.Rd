@@ -20,7 +20,7 @@ a dataframe of max 20 restaurant that can deliver to a selected address based on
 Produces a dataframe of max 20 restaurant that can deliver to a select address ordered by review count/price/rating
 }
 \examples{
-delivery_list("your_yelp_key", "98104", "Rating")
+delivery_list(Sys.getenv("yelp_key"), "98104", "Rating")
 }
 \author{
 Ruoqi xu, Apr 10

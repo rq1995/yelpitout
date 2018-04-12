@@ -2,7 +2,7 @@
 % Please edit documentation in R/name_match.R
 \name{name_match}
 \alias{name_match}
-\title{name match}
+\title{name_match}
 \usage{
 name_match(key, name, city, state, country)
 }
@@ -18,13 +18,13 @@ name_match(key, name, city, state, country)
 \item{country}{a string representing the country code}
 }
 \value{
-a dateframe representing name, phone, location and postal code of a business that is the best match
+a dataframe representing name, phone, location and postal code of a business that is the best match
 }
 \description{
 Returns name, phone, location and postal code of a business that is the best match based on the name provided.
 }
 \examples{
-name_match("yelp_key", "Burnaby", "BC", "CA")
+name_match(Sys.getenv("yelp_key"), "Starbucks", "Burnaby", "BC", "CA")
 }
 \author{
 Ying Dong, Apr 10

@@ -18,13 +18,16 @@ knitr::opts_chunk$set(
 
 ## Introduction
 
-Our package intends to ...
+Our package `yelpitout` intends to develop an R wrapper for the Yelp RESTful API.
 
+The package provides users with three different methods to look for businesses they desire on Yelp. First, find businesses by category and location. Second, match business data by using its name on Yelp. Third, search for businesses which support food delivery transactions.
 
+The package includes four functions. The first function `search_cat()` returns some basic information about 50 businesses based on provided category and location. `location_map()` uses the same search criteria but produces a google map visualization of the top 5 businesses ordered by review count. `name_match()` is able to return 1 business that is the best match based on name and location provided. And the last one `delivery_list()` returns up to 20 businesses that can deliver to a provided location ordered by a specified order. 
+     
 ## Function 1
 
 ```
-search_cat()
+search_cat(yelp_key, category, city)
 ```
 
 **Parameters:**
@@ -37,16 +40,16 @@ search_cat()
 
 **Return:**
 
-* a dateframe representing name, rating, review count of 50 businesses
+* a dateframe containing name, rating, review count of 50 businesses
 
 ## Example 1
 
 ```
-> search("your_yelp_key", "cafe", "Vancouver")
+> search_cat(Sys.getenv("yelp_key"), "cafe", "Vancouver")
 ```     
 
 | name | rating | review_count| 
-| --- | -------- | -------- | -------- |
+| --- | -------- | -------- | 
 | Revolver | 4.5 | 437 | 
 | ... | ... | ... | 
 | Le Marche St. George | 4 | 132 | 
@@ -54,7 +57,7 @@ search_cat()
 ## Function 2
 
 ```
-location_map()
+location_map(yelp_key, category, city)
 ```
 
 **Parameters:**
@@ -72,7 +75,7 @@ location_map()
 ## Example 2
 
 ```
-> location_map("my_key", "cafe", "Vancouver")
+> location_map(Sys.getenv("yelp_key"), "cafe", "Vancouver")
 ```    
 
 ![](../image/function3_output.png)
@@ -80,7 +83,7 @@ location_map()
 ## Function 3
 
 ```
-name_match()
+name_match(key, name, city, state, country)
 ```
 
 **Parameters:**
@@ -97,12 +100,12 @@ name_match()
 
 **Return:**
 
-* a dateframe representing name, phone, location and postal code of a business that is the best match
+* a dateframe containing name, phone, location and postal code of a business that is the best match
 
 ## Example 3
 
 ```
-> name_match("API_key", "Starbucks", "Burnaby", "BC", "CA")
+> name_match(Sys.getenv("yelp_key"), "Starbucks", "Burnaby", "BC", "CA")
 ```     
 
 | Name | Phone | Location | Postal Code |
@@ -112,32 +115,32 @@ name_match()
 ## Function 4
 
 ```
-location_map()
+delivery_list(yelp_key, location, order)
 ```
 
 **Parameters:**
 
-* **yelp_key (str)**: -- a string representing the Yelp API key
+* **yelp_key (str)**: -- a Yelp API key
 
-* **location (str)**: -- a string representing the delivery location, prefer zipcode 
+* **location (str)**: -- a delivery location, prefer zipcode 
             
-* **order (str)**: -- a string representing the outcome order method
+* **order (str)**: -- the outcome order method
 
 **Return:**
 
-* a dataframe of max 20 restaurant that can deliver to a selected address based on selected order
+* a dataframe of max 20 restaurant that can deliver to a provided location based on the selected order
 
 ## Example 4
 
 ```
-> delivery_list("yelp_key", "98104", "Rating")
+> delivery_list(Sys.getenv("yelp_key"), "98104", "Rating")
 ```    
     
-| Price | Rating | Review_number | Phone_number |
-| --- | -------- | -------- | -------- |
-| $ | 4.5 | 106 | (206)249-5988 | 
-| ... | ... | ... | ... | 
-| $$ | 2.5 | 60 | (206)621-8656 | 
+| Restaurant | Price | Rating | Review_number | Phone_number |
+| -------- | --- | -------- | -------- | -------- |
+| Jars Juice | $ | 4.5 | 106 | (206)249-5988 | 
+| ... | ... | ... | ... | ... | 
+| Happy Garden | $$ | 2.5 | 60 | (206)621-8656 | 
                 
                     
                        

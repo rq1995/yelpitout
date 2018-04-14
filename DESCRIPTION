@@ -7,7 +7,7 @@ Authors@R: c(
     person("Ruoqi", "Xu", role = c("aut")),
     person("Ying", "Dong",role = c("aut"))
     )
-Description: Our package intends to …
+Description: Our package intends to develop an R wrapper for the Yelp RESTful API.
 Depends: R (>= 3.4.2)
 License: file LICENSE
 Encoding: UTF-8

@@ -1,7 +1,14 @@
-# Yelp API   
+<div style="max-height:450px; max-width:450px; overflow: hidden">
+   <img src="image/yelpitout.png" align="right" alt="hexlogo" height="120" width="120"/>
+</div>
+   
    
 [![Build Status](https://travis-ci.org/vinverguan/yelpitout.svg?branch=master)](https://travis-ci.org/vinverguan/yelpitout)
 [![codecov](https://codecov.io/gh/vinverguan/yelpitout/branch/master/graphs/badge.svg)](https://codecov.io/gh/vinverguan/yelpitout/)
+
+# Yelp API 
+   
+、
      
 ### Project Contributors
 

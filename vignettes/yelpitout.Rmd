@@ -2,7 +2,7 @@
 title: "yelpitout"
 author: "Yinghua Guan, Ruoqi Xu, Ying Dong, Longlingzi Yao"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: pdf_document
 vignette: >
   %\VignetteIndexEntry{yelpitout}
   %\VignetteEngine{knitr::rmarkdown}
@@ -15,6 +15,18 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
+
+```{r}
+library(yelpitout)
+```
+
+## Installation
+
+```
+devtools::install_github("vinverguan/yelpitout")
+```
+
+**Please define your own Yelp key as a global environment variable when using our functions.**
 
 ## Introduction
 
@@ -44,15 +56,12 @@ search_cat(yelp_key, category, city)
 
 ## Example 1
 
-```
-> search_cat(Sys.getenv("yelp_key"), "cafe", "Vancouver")
-```     
+```{r}
+library(ggplot2)
+result<-search_cat(Sys.getenv("yelp_key"), "cafe", "Vancouver")
+ggplot(result,aes(x=factor(name),y=rating))+geom_bar(stat='identity')+coord_flip()+theme_classic()+theme(axis.text.y=element_text(size =5))
 
-| name | rating | review_count| 
-| --- | -------- | -------- | 
-| Revolver | 4.5 | 437 | 
-| ... | ... | ... | 
-| Le Marche St. George | 4 | 132 | 
+```
 
 ## Function 2
 
@@ -74,11 +83,9 @@ location_map(yelp_key, category, city)
 
 ## Example 2
 
-```
-> location_map(Sys.getenv("yelp_key"), "cafe", "Vancouver")
+```{r}
+location_map(Sys.getenv("yelp_key"), "cafe", "Vancouver")
 ```    
-
-![](../image/function3_output.png)
    
 ## Function 3
 
@@ -104,13 +111,9 @@ name_match(key, name, city, state, country)
 
 ## Example 3
 
-```
-> name_match(Sys.getenv("yelp_key"), "Starbucks", "Burnaby", "BC", "CA")
+```{r}
+name_match(Sys.getenv("yelp_key"), "Starbucks", "Burnaby", "BC", "CA")
 ```     
-
-| Name | Phone | Location | Postal Code |
-| --- | -------- | -------- | -------- |
-| Starbucks | +16042931325 | 4461 Lougheed Hwy | V5C 3Z6 |         
               
 ## Function 4
 
@@ -132,15 +135,9 @@ delivery_list(yelp_key, location, order)
 
 ## Example 4
 
+```{r}
+delivery_list(Sys.getenv("yelp_key"), "98104", "Rating")
 ```
-> delivery_list(Sys.getenv("yelp_key"), "98104", "Rating")
-```    
-    
-| Restaurant | Price | Rating | Review_number | Phone_number |
-| -------- | --- | -------- | -------- | -------- |
-| Jars Juice | $ | 4.5 | 106 | (206)249-5988 | 
-| ... | ... | ... | ... | ... | 
-| Happy Garden | $$ | 2.5 | 60 | (206)621-8656 | 
                 
                     
                        

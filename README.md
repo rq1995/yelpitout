@@ -9,7 +9,17 @@
 2. Ying Dong ([@yvonnedy](http://github.com/yvonnedy))
 3. Ruoqi Xu ([@rq1995](https://github.com/rq1995))
 4. Longlingzi Yao ([@yllz](https://github.com/yllz))
+    
+### Installation  
+   
+Install this package directly from GitHub:
 
+`devtools::install_github("vinverguan/yelpitout")`      
+     
+**Please define your own Yelp key as a global environment variable when using our functions.**      
+    
+**You can also use our Yelp key which can be found in this [`.Renviron` file](https://github.com/vinverguan/yelpitout/blob/master/.Renviron).**        
+                       
 ### Overview   
   
 Our package `yelpitout` intends to develop an R wrapper for the Yelp RESTful API.
@@ -76,12 +86,6 @@ Output:
 
 - a dataframe of max 20 restaurant that can deliver to a selected address based on selected order method
        
-### Installation  
-   
-Install this package directly from GitHub:
-
-`devtools::install_github("vinverguan/yelpitout")`          
-          
 ### Usage 
    
 ```

@@ -26,7 +26,9 @@ library(yelpitout)
 devtools::install_github("vinverguan/yelpitout")
 ```
 
-**Please define your own Yelp key as a global environment variable when using our functions.**
+**Please define your own Yelp key as a global environment variable when using our functions.**      
+    
+**You can also use our Yelp key which can be found in this [`.Renviron` file](https://github.com/vinverguan/yelpitout/blob/master/.Renviron).**
 
 ## Introduction
 
@@ -58,9 +60,12 @@ search_cat(yelp_key, category, city)
 
 ```{r}
 library(ggplot2)
-result<-search_cat(Sys.getenv("yelp_key"), "cafe", "Vancouver")
-ggplot(result,aes(x=factor(name),y=rating))+geom_bar(stat='identity')+coord_flip()+theme_classic()+theme(axis.text.y=element_text(size =5))
 
+result <- search_cat(Sys.getenv("yelp_key"), "cafe", "Vancouver")
+ggplot(result, aes(x=factor(name),y=rating))+geom_bar(stat='identity') +
+  coord_flip() + 
+  theme_classic() + 
+  theme(axis.text.y = element_text(size = 5))
 ```
 
 ## Function 2

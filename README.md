@@ -7,8 +7,6 @@
 [![codecov](https://codecov.io/gh/vinverguan/yelpitout/branch/master/graphs/badge.svg)](https://codecov.io/gh/vinverguan/yelpitout/)
 
 # Yelp API 
-   
-、
      
 ### Project Contributors
 
